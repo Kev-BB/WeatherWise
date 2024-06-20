@@ -2,32 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+th {
+  background-color: #ffa500;
+  padding: 5px;
+}
+
+.chart {
+  background-color: #ffffff;
+  border: solid 2px black;
+}
+
+.custom-shape-divider-bottom-1718732546 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -5;
+}
+
+.custom-shape-divider-bottom-1718732546 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 108px;
+}
+
+.custom-shape-divider-bottom-1718732546 .shape-fill {
+  fill: #ffffff;
+}
+
+@media (max-width: 480px) {
+
+  .input-container {
+    flex-direction: column;
   }
+
+  table{
+    width: 90%;
+  }
+
+  .weather-icon{
+    transform: scale(1.5);
+  }
+
+  .temp-data{
+    padding-left: 25px;
+  }
+
+  .wind,
+  .humidity,.humidity-data, .wind-data {
+    display: none;
+  }
+
 }
